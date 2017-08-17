@@ -31,11 +31,7 @@ module.exports= {
          	{
 				test:/\.js$/,
 				loader:'babel-loader',
-				query:{
-					presets:['latest']
-				},
 				exclude:path.resolve(__dirname,'node_modules'),
-				include:path.resolve(__dirname,'src')
 
 			},
 			{
@@ -48,7 +44,11 @@ module.exports= {
 
     },
     plugins: [
-       
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            }
+        }),
         new ExtractTextPlugin({
             filename: './css/index.css',
             disable: false,
