@@ -1,0 +1,29 @@
+@background-color: red;
+@text-color: #fff;
+@radius:5px;
+
+
+div{
+  background-color: @background-color;
+  color: @text-color;
+  padding: 15px;
+}
+.borderRadius{
+	border-radius:@radius;
+}
+.rounded-corners (@radius: 5px) {
+  border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+}
+
+p {
+  .rounded-corners;
+  color:#ededed;
+  a{
+  	color:@text-color;
+  }
+}
+#footer {
+  .rounded-corners(10px);
+}
